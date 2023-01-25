@@ -102,7 +102,7 @@ class _DeleteAccountPageState extends State<DeleteAccountPage> {
     return Scaffold(
         appBar: AppBar(
           title: const Text(
-            "Update Profile Image",
+            "Delete Account",
             style: TextStyle(
               color: Colors.white,
               fontWeight: FontWeight.w500,

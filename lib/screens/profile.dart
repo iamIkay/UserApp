@@ -199,25 +199,8 @@ class _ProfilePageState extends State<ProfilePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leadingWidth: 96,
-        automaticallyImplyLeading: false,
         centerTitle: true,
         toolbarHeight: 80,
-        leading: GestureDetector(
-          onTap: () {
-            Navigator.of(context).pop();
-          },
-          child: Align(
-            alignment: Alignment.centerLeft,
-            child: Padding(
-              padding: const EdgeInsets.only(left: 8.0),
-              child: Icon(
-                Icons.keyboard_arrow_left,
-                color: Colors.white,
-              ),
-            ),
-          ),
-        ),
         actions: [
           Padding(
             padding: const EdgeInsets.only(right: 8.0),
