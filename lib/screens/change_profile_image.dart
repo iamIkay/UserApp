@@ -1,8 +1,6 @@
 import 'dart:io';
-
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:provider/provider.dart';
 import 'package:user_app/utils/services.dart/auth_services.dart';
 
@@ -23,7 +21,7 @@ class _UpdateProfileImageState extends State<UpdateProfileImage> {
     if (profileImage != null && profileImage.toString().isNotEmpty) {
       return FileImage(File(profileImage));
     } else
-      return AssetImage("assets/avatar.png");
+      return const AssetImage("assets/avatar.png");
   }
 
   onSave() {
@@ -43,7 +41,7 @@ class _UpdateProfileImageState extends State<UpdateProfileImage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           "Update Profile Image",
           style: TextStyle(
             color: Colors.white,
@@ -84,11 +82,11 @@ class _UpdateProfileImageState extends State<UpdateProfileImage> {
                     child: Container(
                       height: 35,
                       width: 35,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         shape: BoxShape.circle,
                         color: Color(0xFF251D2A),
                       ),
-                      child: Icon(
+                      child: const Icon(
                         Icons.camera_alt,
                         color: Colors.white,
                       ),
@@ -98,13 +96,11 @@ class _UpdateProfileImageState extends State<UpdateProfileImage> {
               ),
             ),
           ),
-          SizedBox(height: 50.0),
+          const SizedBox(height: 50.0),
           SizedBox(
             width: double.infinity,
             child: ElevatedButton(
-              onPressed: () {
-                onSave();
-              },
+              onPressed: onSave,
               style: ElevatedButton.styleFrom(
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(7),
@@ -112,13 +108,13 @@ class _UpdateProfileImageState extends State<UpdateProfileImage> {
                 alignment: Alignment.center,
               ),
               child: !_isLoading
-                  ? AppText(
+                  ? const AppText(
                       "UPDATE IMAGE",
                       weight: FontWeight.w700,
                       color: Colors.white,
                       size: 11.0,
                     )
-                  : SizedBox(
+                  : const SizedBox(
                       height: 17.0,
                       width: 17.0,
                       child: CircularProgressIndicator(

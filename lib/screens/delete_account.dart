@@ -82,7 +82,7 @@ class _DeleteAccountPageState extends State<DeleteAccountPage> {
                   child: Container(
                       alignment: Alignment.center,
                       height: 35.0,
-                      color: Color(0xFF993030),
+                      color: const Color(0xFF993030),
                       child: Text(
                         'YES',
                         style: Theme.of(context).textTheme.bodyText2?.copyWith(
@@ -101,7 +101,7 @@ class _DeleteAccountPageState extends State<DeleteAccountPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text(
+          title: const Text(
             "Update Profile Image",
             style: TextStyle(
               color: Colors.white,
@@ -116,7 +116,7 @@ class _DeleteAccountPageState extends State<DeleteAccountPage> {
           child: ElevatedButton(
             onPressed: _deleteAccount,
             style: ElevatedButton.styleFrom(
-              primary: Color(0xFFA83434),
+              primary: const Color(0xFFA83434),
               padding: const EdgeInsets.symmetric(horizontal: 0, vertical: 13),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(7),
@@ -124,13 +124,13 @@ class _DeleteAccountPageState extends State<DeleteAccountPage> {
               alignment: Alignment.center,
             ),
             child: !_isLoading
-                ? AppText(
+                ? const AppText(
                     "DELETE ACCOUNT",
                     weight: FontWeight.w700,
                     color: Colors.white,
                     size: 11.0,
                   )
-                : SizedBox(
+                : const SizedBox(
                     height: 20.0,
                     width: 20.0,
                     child: CircularProgressIndicator(

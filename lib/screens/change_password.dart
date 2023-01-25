@@ -22,7 +22,7 @@ class _UpdatePasswordState extends State<UpdatePassword> {
         Provider.of<AuthProvider>(context, listen: false);
     if (_newPasswordController.text.isEmpty ||
         _currentPasswordController.text.isEmpty) {
-      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
           backgroundColor: Color(0xffF21919),
           content: AppText("Please enter all password fields",
               color: Colors.white)));
@@ -36,9 +36,9 @@ class _UpdatePasswordState extends State<UpdatePassword> {
                 content: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
-                AppText("Updating password"),
-                SizedBox(height: 15.0),
-                SizedBox(
+                const AppText("Updating password"),
+                const SizedBox(height: 15.0),
+                const SizedBox(
                     height: 20.0,
                     width: 20.0,
                     child: CircularProgressIndicator(strokeWidth: 2)),
@@ -60,7 +60,7 @@ class _UpdatePasswordState extends State<UpdatePassword> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           "Update Password",
           style: TextStyle(
             color: Colors.white,
@@ -70,18 +70,18 @@ class _UpdatePasswordState extends State<UpdatePassword> {
         ),
       ),
       body: Padding(
-        padding: EdgeInsets.symmetric(vertical: 60.0, horizontal: 20.0),
+        padding: const EdgeInsets.symmetric(vertical: 60.0, horizontal: 20.0),
         child: ListView(
           children: [
-            AppText("Current password"),
-            SizedBox(height: 5.0),
+            const AppText("Current password"),
+            const SizedBox(height: 5.0),
             InputBox(
                 controller: _currentPasswordController, labelText: "********"),
-            SizedBox(height: 10.0),
-            AppText("New password"),
-            SizedBox(height: 5.0),
+            const SizedBox(height: 10.0),
+            const AppText("New password"),
+            const SizedBox(height: 5.0),
             InputBox(controller: _newPasswordController, labelText: "********"),
-            SizedBox(height: 20.0),
+            const SizedBox(height: 20.0),
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
@@ -94,7 +94,7 @@ class _UpdatePasswordState extends State<UpdatePassword> {
                   ),
                   alignment: Alignment.center,
                 ),
-                child: AppText(
+                child: const AppText(
                   "UPDATE PASSWORD",
                   weight: FontWeight.w700,
                   color: Colors.white,

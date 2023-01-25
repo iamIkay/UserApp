@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
       ],
       builder: (context, child) => MaterialApp(
         debugShowCheckedModeBanner: false,
-        title: 'Flutter Demo',
+        title: 'User App',
         theme: ThemeData(primarySwatch: Palette.primarySwatch),
         home: LoginPage(),
       ),

@@ -17,11 +17,11 @@ class SignUp extends StatefulWidget {
 }
 
 class _SignUpState extends State<SignUp> {
-  TextEditingController _emailController = TextEditingController();
-  TextEditingController _firstNameController = TextEditingController();
-  TextEditingController _lastNameController = TextEditingController();
-  TextEditingController _passwordController = TextEditingController();
-  TextEditingController _phoneController = TextEditingController();
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _firstNameController = TextEditingController();
+  final TextEditingController _lastNameController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
+  final TextEditingController _phoneController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
   bool _isLoading = false;
 
@@ -76,14 +76,7 @@ class _SignUpState extends State<SignUp> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                /*   Padding(
-                  padding: const EdgeInsets.all(30.0),
-                  child: Image.asset(
-                    'assets/color_logo.png',
-                    height: 60.0,
-                  ),
-                ), */
-                Align(
+                const Align(
                   alignment: Alignment.centerLeft,
                   child: AppText(
                     "Sign Up",
@@ -91,7 +84,7 @@ class _SignUpState extends State<SignUp> {
                     size: 20.0,
                   ),
                 ),
-                SizedBox(height: 20.0),
+                const SizedBox(height: 20.0),
                 InputBox(
                   controller: _firstNameController,
                   labelText: "First name",

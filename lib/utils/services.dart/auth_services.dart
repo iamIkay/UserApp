@@ -11,7 +11,6 @@ import '../models/user.dart';
 class AuthProvider extends ChangeNotifier {
   User? user;
   String? token;
-  
 
   Map<String, String> getHeaders({String? content_type, int? id}) {
     return {"Authorization": "Bearer ${user?.token}"};
@@ -152,12 +151,37 @@ class AuthProvider extends ChangeNotifier {
     }
   }
 
+  Future<dynamic> verifyAccount(context, {code}) async {
+    var uri = Uri.parse(
+        "https://demoapi.ppleapp.com/api/v1/user/verify-user?code=$code");
+
+    try {
+      var res = await http.get(uri, headers: getHeaders());
+      var body = json.decode(res.body);
+      if (res.statusCode != 200) {
+        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+            backgroundColor: Color(0xffF21919),
+            content: AppText(body['message'], color: Colors.white)));
+        return null;
+      }
+      print(body);
+
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+          backgroundColor: Color(0xff34A853),
+          content: AppText(body['message'], color: Colors.white)));
+
+      return body;
+    } catch (e) {
+      throw Exception(e);
+    }
+  }
+
   Future<dynamic> deleteAccount(context) async {
     var uri =
         Uri.parse("https://demoapi.ppleapp.com/api/v1/user/delete-account");
 
     try {
-      var res = await http.post(uri, headers: getHeaders());
+      var res = await http.get(uri, headers: getHeaders());
       var body = json.decode(res.body);
       if (res.statusCode != 200) {
         ScaffoldMessenger.of(context).showSnackBar(SnackBar(

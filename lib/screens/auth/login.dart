@@ -42,7 +42,7 @@ class _LoginPageState extends State<LoginPage> {
 
         if (value != null) {
           Navigator.pushReplacement(
-              context, MyCustomRoute(builder: (context) => HomePage()));
+              context, MyCustomRoute(builder: (context) => const HomePage()));
         }
       });
     }
@@ -81,7 +81,7 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                 ), */
 
-                Align(
+                const Align(
                   alignment: Alignment.centerLeft,
                   child: AppText(
                     "Login",
@@ -89,7 +89,7 @@ class _LoginPageState extends State<LoginPage> {
                     size: 20.0,
                   ),
                 ),
-                SizedBox(height: 20.0),
+                const SizedBox(height: 20.0),
                 InputBox(
                     controller: _emailController,
                     labelText: "Email",

@@ -1,4 +1,3 @@
-import 'dart:io';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -6,8 +5,8 @@ import 'package:user_app/screens/auth/login.dart';
 import 'package:user_app/screens/change_password.dart';
 import 'package:user_app/screens/delete_account.dart';
 import 'package:user_app/screens/profile.dart';
+import 'package:user_app/screens/verify_user.dart';
 import 'package:user_app/utils/animate_route.dart';
-import 'package:user_app/utils/palette.dart';
 import 'package:user_app/utils/services.dart/auth_services.dart';
 import 'package:user_app/widgets/input_box.dart';
 
@@ -70,11 +69,11 @@ class _HomePageState extends State<HomePage> {
           },
           child: Row(
             children: [
-              Icon(
+              const Icon(
                 Icons.keyboard_arrow_left,
                 color: Colors.white,
               ),
-              AppText(
+              const AppText(
                 "Logout",
                 color: Colors.white,
                 weight: FontWeight.w500,
@@ -83,52 +82,59 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
       ),
-      body: ListView(padding: EdgeInsets.only(top: 20.0), children: [
+      body: ListView(padding: const EdgeInsets.only(top: 5.0), children: [
         ListTile(
-            title: AppText("Profile"),
-            trailing: Icon(
+            title: const AppText("Profile"),
+            trailing: const Icon(
               Icons.keyboard_arrow_right,
               size: 25,
               color: Colors.black,
             ),
             onTap: () => Navigator.push(context,
-                MaterialPageRoute(builder: (context) => ProfilePage()))),
+                MaterialPageRoute(builder: (context) => const ProfilePage()))),
         ListTile(
-          title: AppText("Verify Account"),
-          trailing: Icon(
+          title: const AppText("Verify Account"),
+          trailing: const Icon(
             Icons.keyboard_arrow_right,
             size: 25,
             color: Colors.black,
           ),
-          onTap: () {},
+          onTap: () => Navigator.push(context,
+              MaterialPageRoute(builder: (context) => const VerifyUser())),
         ),
         ListTile(
-            title: AppText("Change Password"),
-            trailing: Icon(
+            title: const AppText("Change Password"),
+            trailing: const Icon(
               Icons.keyboard_arrow_right,
               size: 25,
               color: Colors.black,
             ),
-            onTap: () => Navigator.push(context,
-                MaterialPageRoute(builder: (context) => UpdatePassword()))),
+            onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => const UpdatePassword()))),
         ListTile(
-            title: AppText("Update Profile Image"),
-            trailing: Icon(
+            title: const AppText("Update Profile Image"),
+            trailing: const Icon(
               Icons.keyboard_arrow_right,
               size: 25,
               color: Colors.black,
             ),
-            onTap: () => Navigator.push(context,
-                MaterialPageRoute(builder: (context) => UpdateProfileImage()))),
+            onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => const UpdateProfileImage()))),
         ListTile(
-            title: AppText("Delete Account"),
-            trailing: Icon(
+            title: const AppText("Delete Account"),
+            trailing: const Icon(
               Icons.keyboard_arrow_right,
               size: 25,
               color: Colors.black,
             ),
-            onTap: () => Navigator.push(context,
-                MaterialPageRoute(builder: (context) => DeleteAccountPage()))),
+            onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => const DeleteAccountPage()))),
       ]),
     );
   }
@@ -162,7 +168,7 @@ class BuildInfoRow extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           SizedBox(width: 90.0, child: AppText("$title ")),
-          SizedBox(height: 5.0),
+          const SizedBox(height: 5.0),
           InputBox(controller: controller, isEnabled: false),
           //AppText(detail, size: 16.0),
         ],

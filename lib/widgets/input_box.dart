@@ -62,20 +62,20 @@ class _InputBoxState extends State<InputBox> {
                         onTap: () => setState(() {
                               _isTextObsured = !_isTextObsured;
                             }),
-                        child: Icon(Icons.visibility))
+                        child: const Icon(Icons.visibility))
                     : InkWell(
                         onTap: () => setState(() {
                               _isTextObsured = !_isTextObsured;
                             }),
-                        child: Icon(Icons.visibility_off))
+                        child: const Icon(Icons.visibility_off))
                 : null,
-            border: OutlineInputBorder(),
-            enabledBorder: OutlineInputBorder(
+            border: const OutlineInputBorder(),
+            enabledBorder: const OutlineInputBorder(
                 borderSide: BorderSide(color: Color(0xFFE4DFDF))),
-            contentPadding: EdgeInsets.symmetric(horizontal: 8, vertical: 0),
+            contentPadding: const EdgeInsets.symmetric(horizontal: 8, vertical: 0),
             hintText: widget.hintText ?? "",
             labelText: widget.labelText ?? "",
-            labelStyle: TextStyle(fontSize: 14.0),
+            labelStyle: const TextStyle(fontSize: 14.0),
             floatingLabelBehavior: FloatingLabelBehavior.never),
       ),
     );

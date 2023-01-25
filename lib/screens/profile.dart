@@ -96,7 +96,7 @@ class _ProfilePageState extends State<ProfilePage> {
             child: AlertDialog(
                 content: Column(
               mainAxisSize: MainAxisSize.min,
-              children: [
+              children: const [
                 AppText("Updating password"),
                 SizedBox(height: 15.0),
                 SizedBox(
